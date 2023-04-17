@@ -1,0 +1,38 @@
+﻿<Window x:Class="DecoratorHW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DecoratorHW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1100">
+    <StackPanel>
+        <StackPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF183050"/>
+                <GradientStop Color="#FF065BCC" Offset="1"/>
+            </LinearGradientBrush>
+        </StackPanel.Background>
+        <ListBox ItemsSource="{Binding Weapons}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Image}" Width="200" Height="200" Stretch="Fill"></Image>
+                        <TextBlock Text="{Binding Name}" Width="200" FontSize="22"/>
+                        <TextBlock Text="Damage" Width="100" FontSize="22" VerticalAlignment="Top" />
+                        <TextBlock Text="{Binding Damage}" Width="100" FontSize="22" />
+                        <TextBlock Text="Mobility" Width="100" FontSize="22" VerticalAlignment="Top" />
+                        <TextBlock Text="{Binding Mobility}" Width="100" FontSize="22" />
+                        <TextBlock Text="Accuracy" Width="100" FontSize="22" VerticalAlignment="Top" />
+                        <TextBlock Text="{Binding Accuracy}" Width="100" FontSize="22" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="GunButton" Content="Add aim for Gun" Height="36" Width="180" Click="AimGunClicked" Background="#FF595586" Foreground="White" FontSize="14"/>
+        <Button x:Name="RiffleButton" Content="Add aim for Riffle" Height="36" Width="181" Click="AimRiffleClicked" Background="#FF595586" Foreground="White" FontSize="14"/>
+        <Button x:Name="GunButtonButt" Content="Add butt for Gun" Height="36" Width="180" Click="ButtGunClicked" Background="#FF595586" Foreground="White" FontSize="14"/>
+        <Button x:Name="RiffleButtonButt" Content="Add butt for Riffle" Height="36" Width="180" Click="ButtRiffleClicked" Background="#FF595586" Foreground="White" FontSize="14"/>
+    </StackPanel>
+</Window>
